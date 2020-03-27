@@ -2,6 +2,7 @@ from random import randint, shuffle
 
 class decompose():
 	def __init__(self, n, auto=True):
+		#decomposer engine
 		first_layer = self.decomposeS(n)
 		res = []
 		for i in first_layer:
@@ -13,6 +14,7 @@ class decompose():
 			else:res.append(str(i))
 		print("+".join(res))
 	def decomposeM(self, n):
+		#decompose by multiplying
 	    def rec(n, i):
 	        if n<0:return None
 	        if n==0:return []
@@ -22,6 +24,7 @@ class decompose():
 	    return rec(n, int(n**0.5))
 
 	def decomposeS(self, n):
+		#decompose by summing
 	    rand = list(range(1, n))
 	    shuffle(rand)
 	    def rec(n):
@@ -35,6 +38,7 @@ class decompose():
 
 
 	def decomposeT(self, n):
+		#decompose by taking away
 	    rand = list(range(1, n))
 	    random_start = randint(n, n+int(n*0.5))
 	    def rec(n2, r):
@@ -47,5 +51,6 @@ class decompose():
 	            if hold!=None:return [j] + hold
 	    return [random_start] + rec(random_start, rand)
 
+
 if __name__ =="__main__":
-	decompose(100)
+	decompose(5)
