@@ -47,4 +47,5 @@ class decompose():
 	            if hold!=None:return [j] + hold
 	    return [random_start] + rec(random_start, rand)
 
-decompose(100)
+if __name__ =="__main__":
+	decompose(100)
