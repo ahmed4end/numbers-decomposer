@@ -53,4 +53,4 @@ class decompose():
 
 
 if __name__ =="__main__":
-	decompose(5)
+	decompose(100)
